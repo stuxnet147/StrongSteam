@@ -8,6 +8,9 @@
     <Filter Include="Source Files\SDK">
       <UniqueIdentifier>{6fc0867a-8ba4-4a85-92f6-dae7350a3dc8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\SDK\Render">
+      <UniqueIdentifier>{0c7b17e5-4710-47f0-be94-d46c253f46f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -38,6 +41,12 @@
     </ClInclude>
     <ClInclude Include="MathASM.h">
       <Filter>Source Files\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="LegacyRender.h">
+      <Filter>Source Files\SDK\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.h">
+      <Filter>Source Files\SDK\Render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

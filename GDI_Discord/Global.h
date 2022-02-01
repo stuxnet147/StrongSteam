@@ -9,6 +9,7 @@ extern "C" int _fltused = 0;
 #include <ntifs.h>
 #include <intrin.h>
 #include <windef.h>
+#include <stdint.h>
 
 #include "Internals.h"
 #include "CryptSTR.h"
@@ -16,3 +17,4 @@ extern "C" int _fltused = 0;
 #include "HideImport.h"
 #include "Helpers.h"
 #include "KGDI.h"
+#include "LegacyRender.h"

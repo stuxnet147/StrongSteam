@@ -320,8 +320,13 @@ public:
             ULONG Pixel2 = *(ULONG*)&Buffer[i + 4] = *(ULONG*)&MappedTextureDecrt[i + 4];
 
             //fix alpha
-            if (Pixel1) Buffer[i + 3] = 0xFF;
-            if (Pixel2) Buffer[i + 7] = 0xFF;
+            if (Pixel1) {
+                Buffer[i + 3] = (char)((float)Buffer[i] * 0.34f + (float)Buffer[i + 1] * 0.55f + (float)Buffer[i + 2] * 0.11f);
+            }
+
+            if (Pixel2) {
+                Buffer[i + 7] = (char)((float)Buffer[i + 4] * 0.34f + (float)Buffer[i + 5] * 0.55f + (float)Buffer[i + 6] * 0.11f);
+            }
 
             //reset pixels
             *(ULONG*)&MappedTextureDecrt[i] = 0;

@@ -97,11 +97,13 @@
   <ItemGroup>
     <ClInclude Include="CRT.h" />
     <ClInclude Include="CryptSTR.h" />
+    <ClInclude Include="Font.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="Helpers.h" />
     <ClInclude Include="HideImport.h" />
     <ClInclude Include="Internals.h" />
     <ClInclude Include="KGDI.h" />
+    <ClInclude Include="LegacyRender.h" />
     <ClInclude Include="MathASM.h" />
   </ItemGroup>
   <ItemGroup>

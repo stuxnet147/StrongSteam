@@ -153,6 +153,10 @@ NTSTATUS MainThread()
 	DWORD textureVersion = 0;
 	auto pBuff111 = UAlloc(size);
 
+	ByteRender BR;
+	BR.Setup(w, h, pBuff111);
+	DecompressFont();
+
 	while (true)
 	{
 		renderSteam.WaitLockFrame();
@@ -192,9 +196,16 @@ NTSTATUS MainThread()
 		};
 		renderSteam.PutCmd(&drawTexturedRect, sizeof(drawTexturedRect));
 		
-		rctx.NewFrame(w, h, E(L"Calibri"), 48, 1);
-		rctx.String(100, 100, L"FACE", TA_CENTER, RGB(255, 255, 255));
-		rctx.EndFrame((PBYTE)pBuff111);
+		BR.Clear();
+
+		BR.FillRectangle({ 100,100 }, { 100,100 }, FColor(255, 0, 0));
+		BR.String({ 100,100 }, L"Hi Im ~ @ FACE GGEZ ¸ ¨!", 1);
+
+
+		//rctx.NewFrame(w, h, E(L"Calibri"), 48, 1);
+		//rctx.String(100, 100, L"FACE", TA_CENTER, RGB(255, 0, 0));
+		//rctx.EndFrame((PBYTE)pBuff111);
+
 
 		renderSteam.PutCmd((PBYTE)pBuff111, size);
 		struct
